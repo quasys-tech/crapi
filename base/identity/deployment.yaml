@@ -36,11 +36,6 @@ spec:
           envFrom:
               - configMapRef:
                   name: crapi-identity-configmap
-          resources:
-            limits:
-              cpu: "500m"
-            requests:
-              cpu: 256m
           readinessProbe:
             tcpSocket:
               port: 8080

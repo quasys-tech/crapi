@@ -18,11 +18,6 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-        resources:
-          limits:
-            cpu: "500m"
-          requests:
-            cpu: 256m
         envFrom:
           - configMapRef:
               name: crapi-web-configmap

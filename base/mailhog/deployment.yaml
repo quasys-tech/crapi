@@ -44,10 +44,3 @@ spec:
           envFrom:
             - configMapRef:
                 name: mailhog-configmap
-          resources:
-            limits:
-              cpu: "1"
-              memory: 1024Mi
-            requests:
-              cpu: 50m
-              memory: 64Mi

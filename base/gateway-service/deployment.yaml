@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gateway-service
-        image: crapi/gateway-service:latest
+        image: quay.io/quasys/gateway-service:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8087

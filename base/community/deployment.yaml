@@ -14,26 +14,26 @@ spec:
     spec:
       initContainers:
         - name: wait-for-postgres
-          image: groundnuty/k8s-wait-for:v1.3
+          image: quay.io/quasys/k8s-wait-for:v1.3
           imagePullPolicy: Always
           args:
             - "service"
             - "postgresdb"
         - name: wait-for-mongo
-          image: groundnuty/k8s-wait-for:v1.3
+          image: quay.io/quasys/k8s-wait-for:v1.3
           imagePullPolicy: Always
           args:
             - "service"
             - "mongodb"
         - name: wait-for-java
-          image: groundnuty/k8s-wait-for:v1.3
+          image: quay.io/quasys/k8s-wait-for:v1.3
           imagePullPolicy: Always
           args:
             - "service"
             - "crapi-identity"
       containers:
       - name: crapi-community
-        image: crapi/crapi-community:latest
+        image: quay.io/quasys/crapi-community:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8087

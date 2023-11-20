@@ -1,12 +1,12 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  namespace: crapi
+  namespace: crapi-2
   name: waitfor-grant
 subjects:
 - kind: ServiceAccount
   name: default
-  namespace: crapi
+  namespace: crapi-2
   apiGroup: ""
 roleRef:
   kind: ClusterRole

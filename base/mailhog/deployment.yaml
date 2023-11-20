@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mailhog
-  namespace: crapi
 spec:
   selector:
     matchLabels:
@@ -22,7 +21,7 @@ spec:
         runAsGroup: 0
       containers:
         - name: mailhog
-          image: crapi/mailhog:latest
+          image: quay.io/quasys/mailhog:latest
           imagePullPolicy: "Always"
           livenessProbe:
             tcpSocket:

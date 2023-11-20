@@ -14,7 +14,7 @@ spec:
     spec:
       initContainers:
         - name: wait-for-postgres
-          image: groundnuty/k8s-wait-for:v1.3
+          image: quay.io/quasys/k8s-wait-for:v1.3
           imagePullPolicy: Always
           args:
             - "service"
@@ -25,7 +25,7 @@ spec:
             secretName: jwt-key-secret
       containers:
         - name: crapi-identity
-          image: crapi/crapi-identity:latest
+          image: quay.io/quasys/crapi-identity:latest
           volumeMounts:
             - mountPath: "/.keys"
               name: jwt-key-secret

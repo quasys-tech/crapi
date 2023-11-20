@@ -14,31 +14,26 @@ spec:
     spec:
       initContainers:
         - name: wait-for-crapi-identity
-          image: groundnuty/k8s-wait-for:v1.3
+          image: quay.io/quasys/k8s-wait-for:v1.3
           imagePullPolicy: Always
           args:
             - "service"
             - "crapi-identity"
         - name: wait-for-crapi-community
-          image: groundnuty/k8s-wait-for:v1.3
+          image: quay.io/quasys/k8s-wait-for:v1.3
           imagePullPolicy: Always
           args:
             - "service"
             - "crapi-community"
       containers:
       - name: crapi-workshop
-        image: crapi/crapi-workshop:latest
+        image: quay.io/quasys/crapi-workshop:latest
         imagePullPolicy: Always  
         ports:
         - containerPort: 8000
         envFrom:
             - configMapRef:
                 name: crapi-workshop-configmap
-        resources:
-          limits:
-            cpu: "256m"
-          requests:
-            cpu: 256m
         readinessProbe:
           tcpSocket:
             port: 8000
